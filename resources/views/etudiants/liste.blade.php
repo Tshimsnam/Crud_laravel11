@@ -10,14 +10,16 @@
 </head>
 
 <body>
-    <h1>Crud laravel 11</h1>    
+    <h1>Crud laravel 11</h1>  
+    <hr>   
 
     <div class="container text-center">
         <div class="row">
 
             <div class="col s12">
                 <a href="/ajouter" class="btn btn-primary">Ajouter un etudiant</a>
-                <table>
+                <hr>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -34,7 +36,7 @@
                             <td>Tshims</td>
                             <td>L2/info</td>
                             <td>
-                                <a href="#" class="btn btn-default">Update</a>
+                                <a href="#" class="btn btn-info">Update</a>
                                 <a href="#" class="btn btn-danger">Delete</a>
                             </td>
                             <tr>
@@ -43,7 +45,7 @@
                                 <td>bands</td>
                                 <td>L3/Lmd</td>
                                 <td>
-                                    <a href="#" class="btn btn-default">Update</a>
+                                    <a href="#" class="btn btn-info">Update</a>
                                     <a href="#" class="btn btn-danger">Delete</a>
                                 </td>
     
@@ -54,7 +56,7 @@
                                 <td>djim</td>
                                 <td>L3/lmd</td>
                                 <td>
-                                    <a href="#" class="btn btn-default">Update</a>
+                                    <a href="#" class="btn btn-info">Update</a>
                                     <a href="#" class="btn btn-danger">Delete</a>
                                 </td>
     
