@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <h1>Crud laravel 11</h1>  
-    <hr>   
-
+    
     <div class="container text-center">
         <div class="row">
-
+            
             <div class="col s12">
+                <h1>Crud laravel 11</h1>  
+                <hr>   
                 <a href="/ajouter" class="btn btn-primary">Ajouter un etudiant</a>
                 <hr>
                 <table class="table">
