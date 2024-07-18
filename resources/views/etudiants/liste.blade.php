@@ -39,23 +39,29 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
+                    @php
+                    $i = 1;
+                    @endphp
                     <tbody>
                         @foreach ($etudiants as $etudiant)
                             <tr>
-                                <td>{{ $etudiant->id }}</td>
+                                <td>{{$i}}</td>
                                 <td>{{ $etudiant->nom }}</td>
                                 <td>{{ $etudiant->prenom }}</td>
                                 <td>{{ $etudiant->classe }}</td>
                                 <td>
                                     <a href="/update-etudiant/{{ $etudiant->id }}" class="btn btn-info">Update</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
-
+                                    <a href="/delete-etudiant/{{ $etudiant->id }}" class="btn btn-danger">Delete</a>
+                                @php
+                                    $i++;
+                                @endphp
                             </tr>
 
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                {{ $etudiants->links() }}
             </div>
         </div>
     </div>
