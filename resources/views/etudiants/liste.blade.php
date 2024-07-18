@@ -10,19 +10,29 @@
 </head>
 
 <body>
-    
+
     <div class="container text-center">
         <div class="row">
-            
+
             <div class="col s12">
-                <h1>Crud laravel 11</h1>  
-                <hr>   
+                <h1>Crud laravel 11</h1>
+                <hr>
                 <a href="/ajouter" class="btn btn-primary">Ajouter un etudiant</a>
                 <hr>
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="alert alert-danger">{{ $error }}</li>
+                    @endforeach
+                </ul>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>N°</th>
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th>Class</th>
@@ -30,39 +40,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Manassé</td>
-                            <td>Tshims</td>
-                            <td>L2/info</td>
-                            <td>
-                                <a href="#" class="btn btn-info">Update</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
-                            </td>
+                        @foreach ($etudiants as $etudiant)
                             <tr>
-                                <td>2</td>
-                                <td>Emmanuel</td>
-                                <td>bands</td>
-                                <td>L3/Lmd</td>
+                                <td>{{ $etudiant->id }}</td>
+                                <td>{{ $etudiant->nom }}</td>
+                                <td>{{ $etudiant->prenom }}</td>
+                                <td>{{ $etudiant->classe }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-info">Update</a>
+                                    <a href="/update-etudiant/{{ $etudiant->id }}" class="btn btn-info">Update</a>
                                     <a href="#" class="btn btn-danger">Delete</a>
-                                </td>
-    
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>David</td>
-                                <td>djim</td>
-                                <td>L3/lmd</td>
-                                <td>
-                                    <a href="#" class="btn btn-info">Update</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
-                                </td>
-    
+
                             </tr>
 
-                        </tr>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
